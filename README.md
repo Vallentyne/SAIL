@@ -29,21 +29,21 @@ In particular, this pattern gives you the ability to utilize OOTB Hugging Face m
 az account set --subscription <subscription ID>
 az configure --defaults workspace=<Azure Machine Learning workspace name> group=<resource group>
 ```
-3. Build Environment
+2. Build Environment
 ```
 az ml environment create -f environment.yml
 ```
-4. Deploy to Managed Online Endpoint
+3. Deploy to Managed Online Endpoint
 ```
 az ml online-endpoint create -f endpoint.yml
 az ml online-deployment create -f deployment.yml --all-traffic
 ```
-5. Get API endpoint and API keys
+4. Get API endpoint and API keys
 ```
 az ml online-endpoint show -n <name>
 az ml online-endpoint get-credentials -n <name>
 ```
-7. Test the model using the `test_model.py` file
+5. Test the model using the `test_model.py` file
 
 ## Contributing
 
