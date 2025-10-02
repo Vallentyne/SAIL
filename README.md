@@ -1,8 +1,8 @@
 ## Objective
 
-The following is guidance to facilitate  deploying of large language models (LLMs) using vLLM on Azure Machine Learning's (AML) Managed Online Endpoints for efficient, scalable, and secure real-time inference.​
+The following is guidance to facilitate deploying of generic AI models including large language models (LLMs) on Azure Machine Learning's (AML) Managed Online Endpoints for efficient, scalable, and secure real-time inference.​ Two patterns of generic AI models as well as models through vLLM are described. By leveraging AML's [Managed Online Endpoints](https://learn.microsoft.com/en-us/azure/machine-learning/how-to-deploy-online-endpoints?view=azureml-api-2&tabs=cli), the model would be deployed within the AML region and secured through inbound and outbound private connections thus ensuring a secured and sovereign solution.
 
-This gives you the ability utilize  OOTB Hugging Face models onto Managed Online Endpoints in AML.
+This gives you the ability utilize OOTB Hugging Face models onto Managed Online Endpoints in AML.
 
  ### Pre-requisites : 
 
