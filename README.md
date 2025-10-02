@@ -48,7 +48,7 @@ az ml online-endpoint get-credentials -n <name>
 
 ## Acknowledgements
 
-Special thanks to the following individuals for them invaluable contribution to this repo
+Special thanks to the following individuals for them invaluable contributions to this repo:
 
 - Shankar Ramachandran: https://github.com/shankar-r10n
 - Amy Xin: https://github.com/amyxixin
