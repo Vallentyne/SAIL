@@ -1,6 +1,6 @@
 ## Objective
 
-This Sovereign AI Landing Zone (SAIL) repository provides a secure foundation for deploying AI models within Canada’s borders on Azure, so organizations can build, scale, and innovate while maintaining the highest standards of privacy and compliance. As the initial focus, we consider soverignity on Azure as satisfying two key requirements:
+This Sovereign AI Landing Zone (SAIL) repository provides a secure foundation for deploying AI models within Canada’s borders on Azure, so organizations can build, scale, and innovate while maintaining the highest standards of privacy and compliance. As the initial focus, we consider sovereignty on Azure as satisfying two key requirements:
 
 * Data **at rest** should be stored within Canadian Azure data centres
 * Data **in-transit** should be processed within Canadian Azure data centres
