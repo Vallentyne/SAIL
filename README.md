@@ -32,7 +32,7 @@ In particular for models from the Directly Sold by Azure list within Microsoft F
     * o3-mini
     * gpt-5
     * gpt-4o (Versions 1120, 0806, 0513 - also available in Canada Central)
-    * gpt-4o-mini - Also available in Canada Central
+    * gpt-4o-mini - also available in Canada Central
 
 
 
