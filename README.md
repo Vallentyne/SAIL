@@ -34,9 +34,7 @@ In particular for models from the Directly Sold by Azure list within Microsoft F
     * gpt-4o (Versions 1120, 0806, 0513 - also available in Canada Central)
     * gpt-4o-mini - also available in Canada Central
 
-* In addition, certain models within Microsoft Foundry can be deployed through managed compute 
-
-
+## Azure Machine Learning AI model deployment options
 
 The following is guidance to facilitate deployment of generic AI models including large language models (LLMs) on Azure Machine Learning's (AML) Managed Online Endpoints for efficient, scalable, and secure real-time inference.​ Two patterns of deployment types are described: models through vLLM and generic AI models. By leveraging AML's [Managed Online Endpoints](https://learn.microsoft.com/en-us/azure/machine-learning/how-to-deploy-online-endpoints?view=azureml-api-2&tabs=cli), the model would be deployed within the AML region and secured through inbound and outbound private connections thus ensuring a secured and sovereign solution.
 
