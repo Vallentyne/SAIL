@@ -11,14 +11,31 @@ We will provide a comprehensive review of deployment approaches and templates fo
 
 ## Microsoft Foundry AI model deployment options
 
-It is important to consider AI models deployable within Microsoft Foundry from the list of [Directly Sold by Azure](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-models/concepts/models-sold-directly-by-azure?view=foundry&tabs=global-standard-aoai%2Cstandard-chat-completions%2Cglobal-standard&pivots=azure-direct-others) models which satisfy deployment requirements from a data security and privacy perspective as outlined [here](https://learn.microsoft.com/en-us/azure/ai-foundry/responsible-ai/openai/data-privacy?view=foundry&tabs=azure-portal). 
+For soverignity reasons, it would be important to consider AI models deployable within Microsoft Foundry from the list of [Directly Sold by Azure](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-models/concepts/models-sold-directly-by-azure?view=foundry&tabs=global-standard-aoai%2Cstandard-chat-completions%2Cglobal-standard&pivots=azure-direct-others) models which satisfy deployment requirements from a data security and privacy perspective as outlined [here](https://learn.microsoft.com/en-us/azure/ai-foundry/responsible-ai/openai/data-privacy?view=foundry&tabs=azure-portal). 
 
 In particular for models from the Directly Sold by Azure list within Microsoft Foundry:
 
 * Data at rest is stored in the Foundry resource in the customer's Azure tenant, within the same geography as the resource. For Canada, the geography is [Canada Central _and_ Canada East](https://learn.microsoft.com/en-us/azure/reliability/regions-list#azure-regions-list-1). Generally prompts and completions for such models are not stored [except as part of specific features](https://learn.microsoft.com/en-us/azure/ai-foundry/responsible-ai/openai/data-privacy?view=foundry&tabs=azure-portal#data-storage-for-azure-direct-models-features) such as fine-tuning and Assistant API. Another default-enabled temporary data storage feature is to [defend against abuse](https://learn.microsoft.com/en-us/azure/ai-foundry/responsible-ai/openai/data-privacy?view=foundry&tabs=azure-portal#preventing-abuse) where potentially abusive material from prompts and completions may be stored up to 30 days for the sole purpose of Microsoft review. This feature can be disabled by submitting this [form](https://customervoice.microsoft.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbR7en2Ais5pxKtso_Pz4b1_xUOE9MUTFMUlpBNk5IQlZWWkcyUEpWWEhGOCQlQCN0PWcu). 
 
+* Data in-transit can be processed in various forms depending on the [model deployment type](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-models/concepts/deployment-types?view=foundry). To ensure that AI models through AI Foundry process data in-transit within Canadian Azure regions, they must be deployed as either
+  * Standard for Pay-As-You-Go deployments
+  * Regional Provisioned for Provisioned Throughput Unit - PTU (dedicated capacity with guaranteed units of throughput) deployments
 
-In general, the service deployment region dictates 
+* Alternatively, global deployment type means that data might be processed for inferencing in any Foundry location in the world. Data zone is not applicable for Canada as only US and Europe regions have [Data Zone support](https://azure.microsoft.com/en-us/blog/announcing-the-availability-of-azure-openai-data-zones-and-latest-updates-from-azure-ai/?msockid=140ffb7f5488655f0412ed745540640a). 
+
+* As of December 17, 2025, these are the models within AI Foundry that provide guaranteed data in-transit processing within Canada:
+  * Standard for Pay-As-You-Go deployments (available through Microsoft Foundry deployed in Canada East region):
+    * gpt-3.5 turbo models (Versions 1106 and 0125)
+    * gpt-4o (Version 1120)
+    * text embedding models (ada, 3-large, 3-small)
+  * Regional Provisioned (PTU) deployments (available through Microsoft Foundry deployed in Canada East region):
+    * o3-mini
+    * gpt-5
+    * gpt-4o (Versions 1120, 0806, 0513 - also available in Canada Central)
+    * gpt-4o-mini - Also available in Canada Central
+
+
+
 
 The following is guidance to facilitate deployment of generic AI models including large language models (LLMs) on Azure Machine Learning's (AML) Managed Online Endpoints for efficient, scalable, and secure real-time inference.​ Two patterns of deployment types are described: models through vLLM and generic AI models. By leveraging AML's [Managed Online Endpoints](https://learn.microsoft.com/en-us/azure/machine-learning/how-to-deploy-online-endpoints?view=azureml-api-2&tabs=cli), the model would be deployed within the AML region and secured through inbound and outbound private connections thus ensuring a secured and sovereign solution.
 
