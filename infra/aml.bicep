@@ -30,7 +30,7 @@ param location string = resourceGroup().location
 @minLength(2)
 @maxLength(10)
 @description('Prefix for all resource names.')
-param prefix string
+param prefix string = 'saildeploy'
 
 // Variables
 var name = toLower('${amlName}')
