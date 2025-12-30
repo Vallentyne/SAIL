@@ -15,9 +15,16 @@ az deployment group create --resource-group <new-rg-name-vnet> --template-file v
 
 ### Steps for Azure Machine Learning
 
+Deploy the ```aml.bicep``` infrastructure as code:
+
+```bash
+az deployment group create --resource-group <new-rg-name> --template-file aml.bicep
+```
+
+
 ### Steps for Microsoft Foundry
 
-Deploy the foundry.bicep infrastructure as code:
+Deploy the ```foundry.bicep``` infrastructure as code:
 
 ```bash
 az deployment group create --resource-group <new-rg-name> --template-file foundry-basic.bicep --parameters vnetRgName="<new-rg-name-vnet>"
