@@ -167,16 +167,16 @@ resource aiServicesDnsGroup 'Microsoft.Network/privateEndpoints/privateDnsZoneGr
 */
 resource modelDeployment 'Microsoft.CognitiveServices/accounts/deployments@2024-10-01'= {
   parent: account
-  name: 'gpt-4o-mini'
+  name: 'gpt-4o'
   sku : {
-    capacity: 1
-    name: 'GlobalStandard'
+    capacity: 25
+    name: 'Standard'
   }
   properties: {
     model:{
-      name: 'gpt-4o-mini'
+      name: 'gpt-4o'
       format: 'OpenAI'
-      version: '2024-07-18'
+      version: '2024-11-20'
     }
   }
 }
