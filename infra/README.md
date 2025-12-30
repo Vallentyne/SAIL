@@ -1,6 +1,8 @@
 ## Infrastructure as code to deploy Microsoft Foundry and Azure Machine Learning with proper private networking controls
 
-### Steps
+### Steps for Azure Machine Learning
+
+### Steps for Microsoft Foundry
 
 1. Create new (or use existing) resource group(s)
 
