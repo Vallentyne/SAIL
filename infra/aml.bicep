@@ -71,8 +71,6 @@ module amlWorkspace 'modules/aml-workspace.bicep' = {
     subnetResourceId: subnetResourceId
 
     // dependent resources
-    aiServicesId: aiDependencies.outputs.aiservicesID
-    aiServicesTarget: aiDependencies.outputs.aiservicesTarget
     applicationInsightsId: aiDependencies.outputs.applicationInsightsId
     containerRegistryId: aiDependencies.outputs.containerRegistryId
     keyVaultId: aiDependencies.outputs.keyvaultId
