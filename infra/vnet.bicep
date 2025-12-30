@@ -12,9 +12,12 @@ param vnetName string = 'private-vnet'
 @description('Name of the private endpoint subnet')
 param peSubnetName string = 'pe-subnet'
 
+@description('Name of the private endpoint subnet')
+param peSubnetName string = 'pe-subnet'
+
 resource virtualNetwork 'Microsoft.Network/virtualNetworks@2024-05-01' = {
   name: vnetName
-  location: location
+  location: resourceGroup().location
   properties: {
     addressSpace: {
       addressPrefixes: [
