@@ -27,7 +27,7 @@ param vnetRgName string
 var vnetId   = resourceId(vnetRgName, 'Microsoft.Network/virtualNetworks', vnetName)
 var subnetId = resourceId(vnetRgName, 'Microsoft.Network/virtualNetworks/subnets', vnetName, peSubnetName)
 
-resource account 'Microsoft.CognitiveServices/accounts@2025-04-01-preview' = {
+resource account 'Microsoft.CognitiveServices/accounts@2025-10-01-preview' = {
   name: aiFoundryName
   location: location
   identity: {
@@ -37,6 +37,9 @@ resource account 'Microsoft.CognitiveServices/accounts@2025-04-01-preview' = {
   sku: {
     name: 'S0'
   }
+  dependsOn: [
+    foundry::model
+  ]
   properties: {
     // Networking
     publicNetworkAccess: 'Disabled'
@@ -184,7 +187,7 @@ resource modelDeployment 'Microsoft.CognitiveServices/accounts/deployments@2024-
 /*
   Step 4: Create a Project
 */
-resource project 'Microsoft.CognitiveServices/accounts/projects@2025-04-01-preview' = {
+resource project 'Microsoft.CognitiveServices/accounts/projects@2025-10-01-preview' = {
   name: defaultProjectName
   parent: account
   location: location
